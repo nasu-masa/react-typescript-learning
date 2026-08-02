@@ -1,0 +1,215 @@
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  color: #172033;
+  background: #f4f7fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(99, 102, 241, 0.14), transparent 32rem),
+    #f4f7fb;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+#root {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 40px 20px;
+}
+
+.register-form {
+  width: min(100%, 480px);
+  padding: 40px;
+  border: 1px solid #e3e8f2;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 24px 60px rgba(35, 48, 80, 0.12);
+}
+
+.register-form__header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.register-form__header h2 {
+  margin: 4px 0 8px;
+  color: #172033;
+  font-size: clamp(1.75rem, 5vw, 2.15rem);
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+}
+
+.register-form__header p {
+  margin: 0;
+  color: #667085;
+  font-size: 0.95rem;
+}
+
+.register-form__header .register-form__eyebrow {
+  color: #4f46e5;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.form-field {
+  margin-bottom: 20px;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 7px;
+  color: #344054;
+  font-size: 0.9rem;
+  font-weight: 650;
+}
+
+.form-field input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #cfd6e4;
+  border-radius: 10px;
+  outline: none;
+  color: #172033;
+  background: #fff;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.form-field input:hover {
+  border-color: #9aa6ba;
+}
+
+.form-field input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.14);
+}
+
+.form-field input[aria-invalid="true"] {
+  border-color: #e5484d;
+}
+
+.form-field input[aria-invalid="true"]:focus {
+  box-shadow: 0 0 0 4px rgba(229, 72, 77, 0.12);
+}
+
+.form-error {
+  margin: 7px 0 0;
+  color: #c72c35;
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.form-error--server {
+  margin: 0 0 18px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #fff0f0;
+}
+
+.register-form button {
+  width: 100%;
+  padding: 13px 20px;
+  border: 0;
+  border-radius: 10px;
+  color: #fff;
+  background: #4f46e5;
+  box-shadow: 0 8px 18px rgba(79, 70, 229, 0.22);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.register-form button:hover:not(:disabled) {
+  background: #4338ca;
+  box-shadow: 0 10px 22px rgba(79, 70, 229, 0.3);
+  transform: translateY(-1px);
+}
+
+.register-form button:focus-visible {
+  outline: 3px solid rgba(99, 102, 241, 0.35);
+  outline-offset: 3px;
+}
+
+.register-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 520px) {
+  #root {
+    padding: 20px 14px;
+  }
+
+  .register-form {
+    padding: 28px 20px;
+    border-radius: 16px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: #e6eaf2;
+    background: #10131a;
+  }
+
+  body {
+    background:
+      radial-gradient(circle at top left, rgba(99, 102, 241, 0.2), transparent 32rem),
+      #10131a;
+  }
+
+  .register-form {
+    border-color: #2d3442;
+    background: rgba(25, 29, 39, 0.96);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+  }
+
+  .register-form__header h2,
+  .form-field label,
+  .form-field input {
+    color: #eef1f7;
+  }
+
+  .register-form__header p {
+    color: #aab3c3;
+  }
+
+  .register-form__header .register-form__eyebrow {
+    color: #a5b4fc;
+  }
+
+  .form-field input {
+    border-color: #465064;
+    background: #11151d;
+  }
+
+  .form-field input:hover {
+    border-color: #69758b;
+  }
+
+  .form-error {
+    color: #ff8e92;
+  }
+
+  .form-error--server {
+    background: rgba(229, 72, 77, 0.12);
+  }
+}
